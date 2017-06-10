@@ -66,7 +66,7 @@ export default class Dialog extends Component {
             dismissable,
             backgroundColor,
             maxHeight,
-            width, 
+            width,
         } = this.props;
 
         let leftActions, rightActions;
@@ -81,7 +81,7 @@ export default class Dialog extends Component {
                 </TouchableWithoutFeedback>
                 <Animated.View style={[styles.container, style, { opacity: this.animatedVal, transform: [{ scale: 1 }], width, maxHeight, backgroundColor }]}>
                     <Text style={[styles.title, { color: titleColor }]}>{title}</Text>
-                    <View style={{ flex: 1 }}>
+                    <View style={{alignItems: 'stretch'}}>
                         {children}
                     </View>
                 {actions && <View style={styles.footer}>
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         opacity: 0,
         zIndex: 9999,
         elevation: 9999,
-        
+
     },
     dismissWrapper: {
         position: 'absolute',
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     dialogBtn: {
         fontWeight: isAndroid ? '400' : '500',
         fontFamily: isAndroid ? 'sans-serif-medium' : 'System',
-        fontSize: isAndroid ? 14 : 13,        
+        fontSize: isAndroid ? 14 : 13,
     }
 })
 
